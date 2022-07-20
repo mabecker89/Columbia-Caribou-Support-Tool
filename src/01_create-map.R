@@ -43,7 +43,8 @@ map <- sf_herd_boundaries %>%
   # Herd boundaries
   addPolygons(color = "steelblue", weight = 2, smoothFactor = 0.2, opacity = 2,
               group = "Herd Boundaries",
-              popup = paste0("Herd name: ", sf_herd_boundaries$HERD_NAME)) |>
+              popup = paste0("Herd name: ", sf_herd_boundaries$HERD_NAME),
+              highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) |>
 
   # Contours
   addPolygons(data = sf_contours_95, color = "red", weight = 2, smoothFactor = 0.2, opacity = 2, fill = FALSE,
@@ -66,6 +67,7 @@ map <- sf_herd_boundaries %>%
 
   # Add layers control
   addLayersControl(overlayGroups = c("Herd Boundaries",
+                                     "Satellite Imagery",
                                      "95th Percentile Contours",
                                      "75th Percentile Contours",
                                      "50th Percentile Contours",
@@ -76,7 +78,12 @@ map <- sf_herd_boundaries %>%
                    position = "topright")
 
 
+# View map
 map
+
+# Save map
+htmlwidgets::saveWidget(map, file = "./docs/contour-map.html", selfcontained = FALSE)
+
 
 
 
