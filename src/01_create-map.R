@@ -102,7 +102,7 @@ map <- sf_herd_boundaries %>%
               group = "20th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
   addPolygons(data = sf_vri_30, color = "forestgreen", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "forestgreen",
-              group = "30th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+              group = "30th Percentile VRI",  highlightOptions = highlightOptions(color="white", fill = "white", weight = 2, bringToFront = TRUE)) %>%
 
   #addPolygons(data = sf_vri_40, color = "darkolivegreen3", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkolivegreen3",
               #group = "40th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
