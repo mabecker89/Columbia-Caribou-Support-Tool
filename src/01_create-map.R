@@ -104,23 +104,23 @@ map <- sf_herd_boundaries %>%
   addPolygons(data = sf_vri_30, color = "forestgreen", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "forestgreen",
               group = "30th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_40, color = "darkolivegreen3", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkolivegreen3",
-              group = "40th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+  #addPolygons(data = sf_vri_40, color = "darkolivegreen3", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkolivegreen3",
+              #group = "40th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_50, color = "darkolivegreen1", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkolivegreen1",
-              group = "50th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+  #addPolygons(data = sf_vri_50, color = "darkolivegreen1", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkolivegreen1",
+              #group = "50th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_60, color = "goldenrod", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "goldenrod",
-              group = "60th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+  #addPolygons(data = sf_vri_60, color = "goldenrod", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "goldenrod",
+              #group = "60th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_70, color = "darkorange3", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkorange3",
-              group = "70th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+  #addPolygons(data = sf_vri_70, color = "darkorange3", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "darkorange3",
+              #group = "70th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_80, color = "firebrick2", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "firebrick2",
-              group = "80th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+ # addPolygons(data = sf_vri_80, color = "firebrick2", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "firebrick2",
+              #group = "80th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
-  addPolygons(data = sf_vri_90, color = "red", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "red",
-              group = "90th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
+  #addPolygons(data = sf_vri_90, color = "red", weight = 1, smoothFactor = 0.2, opacity = 1, fill = "red",
+              #group = "90th Percentile VRI",  highlightOptions = highlightOptions(color = "white", weight = 2, bringToFront = TRUE)) %>%
 
   # Add layers control
   addLayersControl(overlayGroups = c("Herd Boundaries",
@@ -136,13 +136,13 @@ map <- sf_herd_boundaries %>%
                                      "10th Percentile Contours",
                                      "10th Percentile VRI",
                                      "20th Percentile VRI",
-                                     "30th Percentile VRI",
-                                     "40th Percentile VRI",
-                                     "50th Percentile VRI",
-                                     "60th Percentile VRI",
-                                     "70th Percentile VRI",
-                                     "80th Percentile VRI",
-                                     "90th Percentile VRI"),
+                                     "30th Percentile VRI"),
+                                     #"40th Percentile VRI",
+                                     #"50th Percentile VRI",
+                                     #"60th Percentile VRI",
+                                     #"70th Percentile VRI",
+                                     #"80th Percentile VRI",
+                                     #"90th Percentile VRI"),
                    options = layersControlOptions(collapsed = FALSE),
                    position = "topright")
 
@@ -152,7 +152,7 @@ map <- sf_herd_boundaries %>%
 map
 
 # Save map
-#htmlwidgets::saveWidget(map, file = "./docs/contour-map.html", selfcontained = FALSE)
+htmlwidgets::saveWidget(map, file = "./docs/contour-map.html", selfcontained = FALSE)
 
 
 
